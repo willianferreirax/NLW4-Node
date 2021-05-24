@@ -1,0 +1,153 @@
+no terminal
+    yarn init -y
+    (-y significa "inicie sem me perguntar nada")
+
+    yarn add express
+    (adicionar o express)
+
+    yarn add @types/express -D
+    (-D significa q é dependencia de dev)
+
+    yarn add typescript -D
+
+    yarn tsc --init
+
+    tsconfig
+        strict false (adiciona algumas verificaçoes a mais, não é necessario durante o desenvolvimento)
+
+    yarn add ts-node-dev -D (ajuda o node a traduzir o ts)
+
+    criar script package.json
+
+    TypeORM pesquisar
+
+     yarn add typeorm reflect-metadata (instala o typeorm e o reflect-metadata)
+	reflect-metadata (cria as notations, os "@")
+
+     yarn add sqlite3
+
+     criar ormconfig
+
+     pasta database
+        index.ts
+
+import 'reflect-metadata' no server
+
+    criar ormconfig.json
+
+    iniciar server dnv
+
+    criar script typeorm
+	"typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+
+    pasta database/migrations
+
+    yarn typeorm migrations:create -n CreateUsers
+
+    codigo 
+
+    yarn typeorm migration:run (roda a funcao up das migrations)
+
+    ctrl+shift+p
+        sqlite open database
+
+    (alternativa)beekeeper pesquisar
+
+    yarn typeorm migration:revert (desfazer a ultima migration)
+
+    criar controller
+
+    criar routes
+
+    tsconfig mudando
+
+    tirar do comentario
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true,              /* Enables experimental support for ES7 decorators. */
+    "emitDecoratorMetadata": true, 
+
+    yarn add uuid
+    yarn add @types/uuid -D
+
+    ormconfig logging
+    mostra as query
+
+    criar repositories
+
+
+    ------------------------------
+
+    Testes automatizados
+
+    1 - testes unitarios
+
+    2 - testes de integraçao (testa a funcionalidade completa)
+        -> request -> acesso as rotas -> controller -> repositories
+        <- repositories <- controller <- response
+
+    3 - Ponta a ponta (E2E) (aplicação front-end)
+
+    yarn add jest @types/jest -D
+
+    yarn jest --init
+
+    yes
+    yes
+    node
+    coverage reports (mostra oq nao foi coberto por testes) (definimos como no)
+    v8
+    yes
+
+    jest.config.ts
+        bail: true
+    comentar o testEnviroment
+    mudar a pasta (testmatch)
+
+    yarn add ts-jest -D
+
+    jest.config.ts
+        preset descomentar e mudar para: "ts-jest"
+
+    instalar supertest
+
+    yarn add supertest @types/supertest -D
+
+    yarn test (rodar os testes)
+
+    criar o app.ts (mover parte do server) e exportar
+    importar no server
+
+    para o test não de fato ligar o server
+
+    variaveis de ambiente
+
+    alterar o script "test" : "set NODE_ENV=test&&jest"
+
+    criar o script posttest: "del /a /f .src\\database\\database.test.sqlite"
+
+
+    ---------envio de email------------
+    nodemailer e ethereal
+
+    yarn add nodemailer @types/nodemailer
+
+    ethereal.email (link)
+
+    handlebars
+
+    yarn add handlebars
+
+    yup validation
+
+    yarn add yup
+
+    esquece o negocio do posttest
+
+    middleware
+    tudo que esta entre a conexao e a resposta
+
+    para o express saber lidar com erros
+
+    yarn add express-async-errors
+
+    sempre importar logo abaixo do express
